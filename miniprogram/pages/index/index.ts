@@ -1,8 +1,9 @@
 // index.ts
 // 获取应用实例
+const paramUtils=require("../../utils/paramUtils");
 const app = getApp<IAppOption>()
 const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
-import {decrypt, encrypt} from "../../utils/aes";
+
 Component({
   data: {
     motto: 'Hello World',

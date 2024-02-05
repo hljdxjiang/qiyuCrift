@@ -49,3 +49,13 @@ const formatNumber = (n: number) => {
   const s = n.toString()
   return s[1] ? s : '0' + s
 }
+
+export const generateRandomString=(length: number): string=> {
+  const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  let salt = '';
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    salt += characters.charAt(randomIndex);
+  }
+  return salt;
+}
