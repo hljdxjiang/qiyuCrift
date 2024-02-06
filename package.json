@@ -7,7 +7,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.11.16",
-    "miniprogram-api-typings": "^2.8.3-1"
+    "miniprogram-api-typings": "^3.12.2"
   },
   "main": ".eslintrc.js",
   "description": "",

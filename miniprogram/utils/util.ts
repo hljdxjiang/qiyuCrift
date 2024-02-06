@@ -59,3 +59,36 @@ export const generateRandomString=(length: number): string=> {
   }
   return salt;
 }
+
+export const getRandomStr = (length: number): string => {
+  var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var nonce = '';
+  for (var i = 0; i < length; i++) {
+    var index = Math.floor(Math.random() * chars.length);
+    nonce += chars.charAt(index);
+  }
+  return nonce;
+}
+
+export const generateUUID = (): String => {
+  var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+  var uuid = [];
+  var rnd = 0;
+  var r;
+  for (var i = 0; i < 36; i++) {
+    if (i === 8 || i === 13 || i === 18 || i === 23) {
+      uuid[i] = '-';
+    } else if (i === 14) {
+      uuid[i] = '4'; // UUID version 4
+    } else {
+      if (rnd <= 0x02) {
+        rnd = 0x2000000 + (Math.random() * 0x1000000) | 0;
+      }
+      r = rnd & 0xf;
+      rnd = rnd >> 4;
+      uuid[i] = chars[i === 19 ? (r & 0x3) | 0x8 : r];
+    }
+  }
+
+  return uuid.join('');
+}
